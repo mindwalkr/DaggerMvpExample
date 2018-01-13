@@ -1,0 +1,46 @@
+// This file contains versions for all 3rd party libraries as a single source.
+// Clean, sane and no more version conflicts
+
+ext.versions = [
+    minSdk                  : 22,
+    targetSdk               : 26,
+
+    buildTools              : '27.0.1',
+
+    // these next two need the same major version number
+    // also, Android Studio 3.0 cannot handle support libraries 27.x
+    compileSdk              : 26,
+    supportLibs             : '26.1.0',
+
+    // Gradle version
+    androidGradlePlugin     : '3.0.1',
+
+    dagger                  : '2.14.1',
+
+    // Code quality tools
+    findbugs               : '3.0.1',
+
+]
+
+// Gradle Plugins
+ext.gradlePlugins = [
+    android                 : "com.android.tools.build:gradle:$versions.androidGradlePlugin",
+
+]
+
+// Libraries
+ext.libraries = [
+    supportAppCompat        : "com.android.support:appcompat-v7:$versions.supportLibs",
+    supportAnnotations      : "com.android.support:support-annotations:$versions.supportLibs",
+
+    dagger                  : "com.google.dagger:dagger:$versions.dagger",
+    daggerSupportLibraries  : "com.google.dagger:dagger-android-support:$versions.dagger",
+    daggerCompiler          : "com.google.dagger:dagger-compiler:$versions.dagger",
+    daggerAnnotationProcessor : "com.google.dagger:dagger-android-processor:$versions.dagger",
+
+    // Code quality tools
+    findbugs                : "com.google.code.findbugs:jsr305:$versions.findbugs",
+    findbugsAnnotations     : "com.google.code.findbugs:annotations:$versions.findbugs",
+
+
+]
